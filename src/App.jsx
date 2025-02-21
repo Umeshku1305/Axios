@@ -6,7 +6,7 @@ const App = () => {
 
   async function ClickBtn(){
 
-    // const response = await axios.get('https://fakestoreapi.com/products')
+    const response = await axios.get('https://fakestoreapi.com/products')
     console.log(response.data);
     setImageData(response.data)
     
