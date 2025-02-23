@@ -26,45 +26,48 @@ const App = () => {
 
       {ImageData.map(function (item, idx) {
         return (
-          <div key={idx} className="w-full h-screen bg-red-100 flex items-center justify-between  gap-4">
-            <div className=" h-screen w-80 bg-red-300">
-              <img
-                className=" h-60  border-2 px-1.5 py-3 border-amber-300"
-                src={item.image}
-                alt={item.title}
-              />
-              <p className="text-red-500">Price: {item.price}</p>
-              <p className="text-blue-500">Category: {item.category}</p>
-              {/* <p>Id: {item.id}</p> */}
-              <button
-                className="px-3 py-2 bg-orange-500  rounded-md mt-3 m-5"
-                onClick={() => addToCart(item)}
-              >
-                Add To Cart
-              </button>
+          <div
+            key={idx}
+            className="w-full h-screen bg-red-100 flex items-center justify-between  gap-4"
+          >
+            <div className=" h-screen w-[80%] bg-red-300">
+              <div className="">
+                <img
+                  className=" h-60  border-2 px-1.5 py-3 border-amber-300"
+                  src={item.image}
+                />
+                <p className="text-red-500">Price: {item.price}</p>
+                <p className="text-blue-500">Category: {item.category}</p>
+                {/* <p>Id: {item.id}</p> */}
+                <button
+                  className="px-3 py-2 bg-orange-500  rounded-md mt-3 m-5"
+                  onClick={() => addToCart(item)}
+                >
+                  Add To Cart
+                </button>
+              </div>
             </div>
             {CartData.map(function (item, index) {
-        return (
-          <div key={index} className="flex-nowrap inline-block w-80">
-            <img
-              className=" h-60 w-60 border-2 px-1.5 py-3 border-amber-300"
-              src={item[0].image}
-              alt={item[0].title}
-            />
-            <p className="text-red-500">Price: {item[0].price}</p>
-            <p className="text-blue-500"> Category: {item[0].category}</p>
-            {/* <p>Id: {item[0].id}</p> */}
-            <button className="px-3 py-2 bg-orange-500  rounded-md mt-3 m-5">
-              Remove From Cart
-            </button>
+              return (
+                <div className="w-60">
+                  <div key={index} className="">
+                    <img
+                      className=" h-40 w-40 border-2 px-1.5 py-3 border-amber-300"
+                      src={item.image}
+                    />
+                    <p className="text-red-500">Price: {item.price}</p>
+                    <p className="text-blue-500"> Category: {item.category}</p>
+                    {/* <p>Id: {item[0].id}</p> */}
+                    <button className="px-3 py-2 bg-orange-500  rounded-md mt-3 m-5">
+                      Remove From Cart
+                    </button>
+                  </div>
+                </div>
+              );
+            })}
           </div>
         );
       })}
-          </div>
-        );
-      })}
-
-      
     </div>
   );
 };
